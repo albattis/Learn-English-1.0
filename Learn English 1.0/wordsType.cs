@@ -12,11 +12,9 @@ namespace Learn_English_1._0
     using System;
     using System.Collections.Generic;
     
-    public partial class words
+    public partial class wordsType
     {
-        public int word_id { get; set; }
-        public string word_hungarian { get; set; }
-        public string word_english { get; set; }
-        public Nullable<int> word_tpye { get; set; }
+        public int Id { get; set; }
+        public string name { get; set; }
     }
 }

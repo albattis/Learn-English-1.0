@@ -12,9 +12,15 @@ namespace Learn_English_1._0
 {
     public partial class EndLearnWord : Form
     {
-        public EndLearnWord()
+        public EndLearnWord(WordGame game)
         {
             InitializeComponent();
+            label1.Text = $"Az Őn által szerezett \npontok összege:\n \t\t{game.szamlalo}";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

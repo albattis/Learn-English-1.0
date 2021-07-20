@@ -36,9 +36,10 @@ namespace Learn_English_1._0
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Brush Script MT", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(90, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(62, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -50,6 +51,7 @@ namespace Learn_English_1._0
             this.button1.TabIndex = 1;
             this.button1.Text = "Vissza";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EndLearnWord
             // 

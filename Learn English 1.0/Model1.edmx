@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="learnenglishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="learnenglishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="userid" />
@@ -21,13 +21,21 @@
           <Property Name="word_id" Type="int" Nullable="false" />
           <Property Name="word_hungarian" Type="varchar" MaxLength="50" />
           <Property Name="word_english" Type="varchar" MaxLength="50" />
+          <Property Name="word_tpye" Type="int" />
+        </EntityType>
+        <EntityType Name="wordsType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="learnenglishModelStoreContainer">
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="words" EntityType="Self.words" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wordsType" EntityType="Self.wordsType" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="learnenglishModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -47,11 +55,20 @@
           <Property Name="word_id" Type="Int32" Nullable="false" />
           <Property Name="word_hungarian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="word_english" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="word_tpye" Type="Int32" />
         </EntityType>
         <EntityContainer Name="learnenglishEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="users" EntityType="Self.users" />
           <EntitySet Name="words" EntityType="Self.words" />
+          <EntitySet Name="wordsType" EntityType="learnenglishModel.wordsType" />
         </EntityContainer>
+        <EntityType Name="wordsType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -71,9 +88,18 @@
           <EntitySetMapping Name="words">
             <EntityTypeMapping TypeName="learnenglishModel.words">
               <MappingFragment StoreEntitySet="words">
+                <ScalarProperty Name="word_tpye" ColumnName="word_tpye" />
                 <ScalarProperty Name="word_id" ColumnName="word_id" />
                 <ScalarProperty Name="word_hungarian" ColumnName="word_hungarian" />
                 <ScalarProperty Name="word_english" ColumnName="word_english" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wordsType">
+            <EntityTypeMapping TypeName="learnenglishModel.wordsType">
+              <MappingFragment StoreEntitySet="wordsType">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

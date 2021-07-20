@@ -15,6 +15,7 @@ namespace Learn_English_1._0
         int nowid = 1;
         int wrongidone = 0;
         int wrongidtwo = 0;
+        int wordscount = 0;
         public bool end = false;
 
         public wordsClass()
@@ -29,7 +30,8 @@ namespace Learn_English_1._0
 
             using (var content = new learnenglishEntities())
             {
-                if (!nowid.Equals(content.words.Count()))
+                wordscount = content.words.Count();
+                if (!nowid.Equals(wordscount+1))
                 {
                     foreach (var item in content.words)
                     {
@@ -47,14 +49,24 @@ namespace Learn_English_1._0
             wrongIdSelected();
         }
 
-        
+        private void RandomGenerate()
+        {
+
+            Random r = new Random();
+            wrongidone = r.Next(1, wordscount);
+            wrongidtwo = r.Next(1, wordscount);
+            while (wrongidone.Equals(wrongidtwo)||wrongidone.Equals(nowid-1)||wrongidtwo.Equals(nowid-1))
+            {
+                wrongidone = r.Next(1, wordscount);
+                wrongidtwo = r.Next(1, wordscount);
+            }
+        }
         private void wrongIdSelected()
         {
             using (var content = new learnenglishEntities())
             {
-                Random r = new Random();
-                wrongidone = r.Next(1, content.words.Count());
-                wrongidtwo = r.Next(1, content.words.Count());
+                RandomGenerate();
+                
                 foreach (var item in content.words)
                 {
                     if (item.word_id.Equals(wrongidone))

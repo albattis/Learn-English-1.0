@@ -22,5 +22,11 @@ namespace Learn_English_1._0
             LearnEnglishWordslearning words = new LearnEnglishWordslearning();
             words.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NewWordAdd add = new NewWordAdd();
+            add.Show();
+        }
     }
 }

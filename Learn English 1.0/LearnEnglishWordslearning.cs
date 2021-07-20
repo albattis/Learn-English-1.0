@@ -19,6 +19,7 @@ namespace Learn_English_1._0
         public LearnEnglishWordslearning()
         {
             InitializeComponent();
+            WordMix();
         }
 
         private void LearnEnglishWordslearning_Load(object sender, EventArgs e)
@@ -55,49 +56,26 @@ namespace Learn_English_1._0
             }
         }
 
-        private void CheckGame()
+        private void button1_Click(object sender, EventArgs e)
         {
-            bool eredmeny = false;
-            if (game.i.Equals(1) && radioButton3.Checked)
+
+            if (game.CheckGame(radioButton1, radioButton2, radioButton3))
             {
-                game.szamlalo++;
-                eredmeny = true;
-            }
-            if (game.i.Equals(2) && radioButton1.Checked)
-            {
-                game.szamlalo++;
-                eredmeny = true;
-            }
-            if (game.i.Equals(3) && radioButton2.Checked)
-            {
-                game.szamlalo++;
-                eredmeny = true;
-            }
-            if (eredmeny)
-            {
-                eredmeny = false;
                 label5.BackColor = Color.Green;
             }
             else
             {
                 label5.BackColor = Color.Red;
             }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            CheckGame();
-            label5.Text = $"Jelenlegi pont: {game.szamlalo}";
-            
-            if (!word.end)
+                label5.Text = $"Jelenlegi pont: {game.szamlalo}";
+            WordMix();
+            if (word.end)
             {
-                WordMix();
+                EndLearnWord endLearnWord = new EndLearnWord(game);
+                endLearnWord.Show();
+                this.Close();
             }
-            else 
-            {
-                EndLearnWord endLearnWord = new EndLearnWord();
-               
-            }
+           
         }
     }
 }
