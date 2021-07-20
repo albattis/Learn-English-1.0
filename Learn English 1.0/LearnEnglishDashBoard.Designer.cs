@@ -29,7 +29,18 @@ namespace Learn_English_1._0
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(258, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 51);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Szó tanulás";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LearnEnglishDashBoard
             // 
@@ -37,6 +48,7 @@ namespace Learn_English_1._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Name = "LearnEnglishDashBoard";
             this.Text = "Learn English 1.0";
             this.ResumeLayout(false);
@@ -44,6 +56,8 @@ namespace Learn_English_1._0
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
 
