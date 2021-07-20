@@ -75,7 +75,11 @@ namespace Learn_English_1._0
                 endLearnWord.Show();
                 this.Close();
             }
-           
+
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+
         }
     }
 }

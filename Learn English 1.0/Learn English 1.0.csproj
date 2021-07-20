@@ -112,6 +112,13 @@
     <Compile Include="wordsType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WriteGame.cs" />
+    <Compile Include="WritetoWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WritetoWord.Designer.cs">
+      <DependentUpon>WritetoWord.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EndLearnWord.resx">
       <DependentUpon>EndLearnWord.cs</DependentUpon>
     </EmbeddedResource>
