@@ -15,6 +15,7 @@ namespace Learn_English_1._0
         int nowid = 1;
         int wrongidone = 0;
         int wrongidtwo = 0;
+        public bool end = false;
 
         public wordsClass()
         {
@@ -28,15 +29,20 @@ namespace Learn_English_1._0
 
             using (var content = new learnenglishEntities())
             {
-                foreach (var item in content.words)
+                if (!nowid.Equals(content.words.Count()))
                 {
-                    if (item != null && item.word_id.Equals(nowid))
+                    foreach (var item in content.words)
                     {
-                        word = item.word_hungarian;
-                        answer = item.word_english;
-                        nowid++;
+                        if (item != null && item.word_id.Equals(nowid))
+                        {
+                            word = item.word_hungarian;
+                            answer = item.word_english;
+
+                        }
                     }
+                    nowid++;
                 }
+                else { end = true; }
             }
             wrongIdSelected();
         }

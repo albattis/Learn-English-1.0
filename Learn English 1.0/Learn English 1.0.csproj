@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EndLearnWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EndLearnWord.Designer.cs">
+      <DependentUpon>EndLearnWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="LearnEnglishDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,10 +98,14 @@
     <Compile Include="users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WordGame.cs" />
     <Compile Include="words.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="wordsClass.cs" />
+    <EmbeddedResource Include="EndLearnWord.resx">
+      <DependentUpon>EndLearnWord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LearnEnglishDashBoard.resx">
       <DependentUpon>LearnEnglishDashBoard.cs</DependentUpon>
     </EmbeddedResource>
