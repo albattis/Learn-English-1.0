@@ -34,5 +34,10 @@ namespace Learn_English_1._0
             WritetoWord wirte = new WritetoWord();
             wirte.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

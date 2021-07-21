@@ -15,7 +15,7 @@ namespace Learn_English_1._0
         public bool CheckWriteWord(TextBox textBox,string word)
         {
 
-            if (word.Equals(textBox.Text))
+            if (word.ToLower().Equals(textBox.Text.ToLower()))
             {
                 szamlalo++;
                 return true;

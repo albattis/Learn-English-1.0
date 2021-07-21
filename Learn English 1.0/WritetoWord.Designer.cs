@@ -40,18 +40,20 @@ namespace Learn_English_1._0
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.label1.Location = new System.Drawing.Point(66, 39);
+            this.label1.Location = new System.Drawing.Point(101, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 29);
+            this.label1.Size = new System.Drawing.Size(157, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ird le a szót angolul";
+            this.label1.Text = "Ird le angolul";
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 12.25F);
             this.textBox1.Location = new System.Drawing.Point(106, 150);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
+            this.textBox1.Size = new System.Drawing.Size(150, 26);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -85,6 +87,7 @@ namespace Learn_English_1._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(353, 318);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
