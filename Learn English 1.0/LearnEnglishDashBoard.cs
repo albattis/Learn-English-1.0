@@ -28,5 +28,11 @@ namespace Learn_English_1._0
             NewWordAdd add = new NewWordAdd();
             add.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            WritetoWord wirte = new WritetoWord();
+            wirte.Show();
+        }
     }
 }

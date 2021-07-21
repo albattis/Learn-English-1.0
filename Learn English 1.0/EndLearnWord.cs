@@ -18,6 +18,13 @@ namespace Learn_English_1._0
             label1.Text = $"Az Őn által szerezett \npontok összege:\n \t\t{game.szamlalo}";
         }
 
+        public EndLearnWord(WriteGame game)
+        {
+            InitializeComponent();
+            label1.Text = $"Az Őn által szerezett \npontok összege:\n \t\t{game.szamlalo}";
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
