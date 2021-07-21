@@ -37,7 +37,8 @@ namespace Learn_English_1._0
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            GramaticChange change = new GramaticChange();
+            change.Show();
         }
     }
 }
