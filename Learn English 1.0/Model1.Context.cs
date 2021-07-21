@@ -28,5 +28,6 @@ namespace Learn_English_1._0
         public virtual DbSet<users> users { get; set; }
         public virtual DbSet<words> words { get; set; }
         public virtual DbSet<wordsType> wordsType { get; set; }
+        public virtual DbSet<grammar> grammar { get; set; }
     }
 }

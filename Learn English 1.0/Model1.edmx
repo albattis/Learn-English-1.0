@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="learnenglishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="grammar">
+          <Key>
+            <PropertyRef Name="grammary_id" />
+          </Key>
+          <Property Name="grammary_id" Type="int" Nullable="false" />
+          <Property Name="rule_name" Type="varchar" MaxLength="350" />
+          <Property Name="grammatical_rule" Type="text" />
+        </EntityType>
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="userid" />
@@ -31,6 +39,7 @@
           <Property Name="name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="learnenglishModelStoreContainer">
+          <EntitySet Name="grammar" EntityType="Self.grammar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="words" EntityType="Self.words" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="wordsType" EntityType="Self.wordsType" Schema="dbo" store:Type="Tables" />
@@ -61,6 +70,7 @@
           <EntitySet Name="users" EntityType="Self.users" />
           <EntitySet Name="words" EntityType="Self.words" />
           <EntitySet Name="wordsType" EntityType="learnenglishModel.wordsType" />
+          <EntitySet Name="grammar" EntityType="learnenglishModel.grammar" />
         </EntityContainer>
         <EntityType Name="wordsType">
           <Key>
@@ -68,6 +78,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="grammar">
+          <Key>
+            <PropertyRef Name="grammary_id" />
+          </Key>
+          <Property Name="grammary_id" Type="Int32" Nullable="false" />
+          <Property Name="rule_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="grammatical_rule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -100,6 +118,15 @@
               <MappingFragment StoreEntitySet="wordsType">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="grammar">
+            <EntityTypeMapping TypeName="learnenglishModel.grammar">
+              <MappingFragment StoreEntitySet="grammar">
+                <ScalarProperty Name="grammatical_rule" ColumnName="grammatical_rule" />
+                <ScalarProperty Name="rule_name" ColumnName="rule_name" />
+                <ScalarProperty Name="grammary_id" ColumnName="grammary_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

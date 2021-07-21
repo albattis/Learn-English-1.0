@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="learnenglishModel.users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="learnenglishModel.words" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="learnenglishModel.wordsType" Width="1.5" PointX="5.125" PointY="0.75" />
+        <EntityTypeShape EntityType="learnenglishModel.grammar" Width="1.5" PointX="0.75" PointY="2.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
