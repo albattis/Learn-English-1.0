@@ -40,5 +40,11 @@ namespace Learn_English_1._0
             GramaticChange change = new GramaticChange();
             change.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Addgrammar gramm = new Addgrammar();
+            gramm.Show();
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace Learn_English_1._0
                 int count=0;
                 foreach (var item in content.grammar)
                 {
-                     count = content.grammar.Count();
+                     count = content.grammar.Count()+1;
                 }
 
                 grammar gram = new grammar
@@ -33,10 +33,16 @@ namespace Learn_English_1._0
                     grammatical_rule = textBox2.Text,
                     rule_name = textBox1.Text
                 };
-
-                content.grammar.Add(gram);
-                content.SaveChanges();
-
+                try
+                {
+                    content.grammar.Add(gram);
+                    content.SaveChanges();
+                    MessageBox.Show("Sikeres feltöltés", "Feltöltés", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch 
+                {
+                    MessageBox.Show("Adatbázis hiba", "Feltöltési hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
         }
