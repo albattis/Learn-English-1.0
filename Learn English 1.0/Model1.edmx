@@ -12,6 +12,7 @@
           <Property Name="grammary_id" Type="int" Nullable="false" />
           <Property Name="rule_name" Type="varchar" MaxLength="350" />
           <Property Name="grammatical_rule" Type="text" />
+          <Property Name="condition" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -86,6 +87,7 @@
           <Property Name="grammary_id" Type="Int32" Nullable="false" />
           <Property Name="rule_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="grammatical_rule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="condition" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -124,6 +126,7 @@
           <EntitySetMapping Name="grammar">
             <EntityTypeMapping TypeName="learnenglishModel.grammar">
               <MappingFragment StoreEntitySet="grammar">
+                <ScalarProperty Name="condition" ColumnName="condition" />
                 <ScalarProperty Name="grammatical_rule" ColumnName="grammatical_rule" />
                 <ScalarProperty Name="rule_name" ColumnName="rule_name" />
                 <ScalarProperty Name="grammary_id" ColumnName="grammary_id" />

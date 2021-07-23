@@ -17,5 +17,6 @@ namespace Learn_English_1._0
         public int grammary_id { get; set; }
         public string rule_name { get; set; }
         public string grammatical_rule { get; set; }
+        public string condition { get; set; }
     }
 }

@@ -25,6 +25,13 @@ namespace Learn_English_1._0
 
         }
 
+        public EndLearnWord(int jegy)
+        {
+            InitializeComponent();
+            label1.Text = $"Az Őn által szerezett \njegy:\n \t\t{jegy}";
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

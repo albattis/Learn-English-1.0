@@ -77,6 +77,13 @@
     <Compile Include="grammar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="GrammarPractice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrammarPractice.Designer.cs">
+      <DependentUpon>GrammarPractice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrammaticalRuleControl.cs" />
     <Compile Include="GrammaticRule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GramaticChange.resx">
       <DependentUpon>GramaticChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrammarPractice.resx">
+      <DependentUpon>GrammarPractice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GrammaticRule.resx">
       <DependentUpon>GrammaticRule.cs</DependentUpon>

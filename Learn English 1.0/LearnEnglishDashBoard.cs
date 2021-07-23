@@ -46,5 +46,11 @@ namespace Learn_English_1._0
             Addgrammar gramm = new Addgrammar();
             gramm.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            GrammarPractice practice = new GrammarPractice();
+            practice.Show();
+        }
     }
 }
