@@ -12,6 +12,8 @@ namespace Learn_English_1._0
 {
     public partial class NewWordAdd : Form
     {
+        bool insert = true;
+
         public NewWordAdd()
         {
             InitializeComponent();
@@ -27,27 +29,48 @@ namespace Learn_English_1._0
         private void button1_Click(object sender, EventArgs e)
         {
             int id = 0;
+
             using (var context = new learnenglishEntities())
             {
-                id = context.words.Count() + 1;
-
-
-                words words = new words
+                foreach (var item in context.words)
                 {
-                    word_id = id,
-                    word_hungarian = textBox1.Text,
-                    word_english = textBox2.Text,
-                    word_tpye = (int)comboBox1.SelectedValue
-                };
-
-                context.words.Add(words);
-                try { context.SaveChanges();
-                    MessageBox.Show("Sikeres felvétel", "Új szó felvétele", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                catch (Exception ee) {
-                    MessageBox.Show($"Sikertelen felvétel\n {ee.Message}", "Új szó felvétele", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (item.word_hungarian.ToLower().Equals(textBox1.Text.ToLower()))
+                    {
+                        insert = false;
+                    }
                 }
+                if (insert)
+                {
+                    id = context.words.Count() + 1;
 
+
+                    words words = new words
+                    {
+                        word_id = id,
+                        word_hungarian = textBox1.Text,
+                        word_english = textBox2.Text,
+                        word_tpye = (int)comboBox1.SelectedValue
+                    };
+
+                    context.words.Add(words);
+                    try
+                    {
+                        context.SaveChanges();
+                        MessageBox.Show("Sikeres felvétel", "Új szó felvétele", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show($"Sikertelen felvétel\n {ee.Message}", "Új szó felvétele", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("A szó már létezik", "Új szó felvétele", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
     }
 }

@@ -31,18 +31,18 @@ namespace Learn_English_1._0
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.learnenglishDataSet = new Learn_English_1._0.learnenglishDataSet();
             this.wordsTableAdapter = new Learn_English_1._0.learnenglishDataSetTableAdapters.wordsTableAdapter();
-            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.learnenglishDataSet)).BeginInit();
@@ -71,6 +71,18 @@ namespace Learn_English_1._0
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(362, 159);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label5, 2);
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(3, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(356, 35);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Jelenlegi pontok:0";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -104,30 +116,6 @@ namespace Learn_English_1._0
             this.label3.Size = new System.Drawing.Size(216, 31);
             this.label3.TabIndex = 2;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "word_hungarian", true));
-            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "word_hungarian", true));
-            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
-            this.label4.Location = new System.Drawing.Point(235, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "label4";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton1.Location = new System.Drawing.Point(225, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(134, 25);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -165,6 +153,30 @@ namespace Learn_English_1._0
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButton1.Location = new System.Drawing.Point(225, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(134, 25);
+            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "word_hungarian", true));
+            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "word_hungarian", true));
+            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.label4.Location = new System.Drawing.Point(217, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "label4";
+            // 
             // bindingSource1
             // 
             this.bindingSource1.DataMember = "words";
@@ -178,18 +190,6 @@ namespace Learn_English_1._0
             // wordsTableAdapter
             // 
             this.wordsTableAdapter.ClearBeforeFill = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label5, 2);
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(3, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(356, 35);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "label5";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LearnEnglishWordslearning
             // 
