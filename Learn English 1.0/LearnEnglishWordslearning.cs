@@ -15,25 +15,33 @@ namespace Learn_English_1._0
         
         wordsClass word = new wordsClass();
         WordGame game = new WordGame();
+        WordChangeClass words;
+        int[] wordid = new int[100];
+        int repeatcount = 0;
 
-        public LearnEnglishWordslearning()
+        
+
+        public LearnEnglishWordslearning(WordChangeClass item)
         {
+            words = item;
             InitializeComponent();
-            WordMix();
+            word.talalat = false;
+           
+                WordMix();
+            
         }
+
+       
 
         private void LearnEnglishWordslearning_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'learnenglishDataSet.words' table. You can move, or remove it, as needed.
             this.wordsTableAdapter.Fill(this.learnenglishDataSet.words);
-
+            label4.Text = word.word;
         }
 
-        private void WordMix()
+        private void WordMixing()
         {
-            
-            word.wordsControl();
-            label4.Text = word.word;
             Random r = new Random();
             game.i = r.Next(1, 3);
             if (game.i.Equals(1))
@@ -54,32 +62,66 @@ namespace Learn_English_1._0
                 label1.Text = word.wrongtwo;
                 label2.Text = word.answer;
             }
+            
+        }
+        private void WordMix()
+        {
+            label3.Text = "";
+            label1.Text = "";
+            label2.Text = "";
+            
+                if (words.darab != 0)
+                {
+                while (!word.talalat && !word.end)
+                {
+                    word.wordsControl(words.szofaj);
+                }
+                
+                    label4.Text =word.word;
+                    WordMixing();
+                
+
+            }
+                else
+                { word.end = true;repeatcount = 0;}
+
+                wordid[repeatcount] = word.lastid;
+                repeatcount++;
+
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (game.CheckGame(radioButton1, radioButton2, radioButton3))
-            {
-                label5.BackColor = Color.Green;
-            }
-            else
-            {
-                label5.BackColor = Color.Red;
-            }
-                label5.Text = $"Jelenlegi pont: {game.szamlalo}";
-            WordMix();
+            word.talalat = false;
+                    if (game.CheckGame(radioButton1, radioButton2, radioButton3))
+                    {
+                        label5.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        label5.BackColor = Color.Red;
+                    }
+                    label5.Text = $"Jelenlegi pont: {game.szamlalo}";
+            
+            
+                WordMix();
+            
+            words.darab--;
             if (word.end)
             {
-                EndLearnWord endLearnWord = new EndLearnWord(game);
-                endLearnWord.Show();
-                this.Close();
+                
+                    EndLearnWord endLearnWord = new EndLearnWord(game);
+                    endLearnWord.Show();
+                    this.Close();
+                
             }
 
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+            
         }
     }
 }

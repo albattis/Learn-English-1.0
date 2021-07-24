@@ -19,8 +19,8 @@ namespace Learn_English_1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LearnEnglishWordslearning words = new LearnEnglishWordslearning();
-            words.Show();
+            WordChange change = new WordChange();
+            change.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -17,36 +17,59 @@ namespace Learn_English_1._0
         int wrongidtwo = 0;
         int wordscount = 0;
         public bool end = false;
-
+        public int lastid;
+        public bool talalat = false;
         public wordsClass()
         {
 
 
         }
+        public void WordsControl(int id)
+        {
+            using (var content = new learnenglishEntities())
+            {
+                foreach (var item in content.words)
+                {
+                    if (item.word_id.Equals(id))
+                    {
+                        word = item.word_hungarian;
+                        answer = item.word_english;
+                        talalat = true;
+                    }
+                }
+                wrongIdSelected();
+            }
+        
+        }
 
-
-        public void wordsControl()
+        public void wordsControl(int szofajid)
         {
 
             using (var content = new learnenglishEntities())
             {
                 wordscount = content.words.Count();
-                if (!nowid.Equals(wordscount+1))
-                {
-                    foreach (var item in content.words)
+
+                    if (!nowid.Equals(wordscount + 1))
                     {
-                        if (item != null && item.word_id.Equals(nowid))
+                        foreach (var item in content.words)
+                        {
+                        if (item != null && item.word_id.Equals(nowid) && item.word_tpye.Equals(szofajid))
                         {
                             word = item.word_hungarian;
                             answer = item.word_english;
-
+                            lastid = nowid;
+                            talalat = true;
                         }
+                        
+                        
+                        }
+                        nowid++;
                     }
-                    nowid++;
-                }
-                else { end = true; }
+                    else { end = true; }
+                
             }
             wrongIdSelected();
+
         }
 
         private void RandomGenerate()

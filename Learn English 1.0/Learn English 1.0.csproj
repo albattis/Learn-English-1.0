@@ -133,6 +133,13 @@
     <Compile Include="users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordChange.Designer.cs">
+      <DependentUpon>WordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WordChangeClass.cs" />
     <Compile Include="WordGame.cs" />
     <Compile Include="WordGameController.cs" />
     <Compile Include="words.cs">
@@ -182,6 +189,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WordChange.resx">
+      <DependentUpon>WordChange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WritetoWord.resx">
       <DependentUpon>WritetoWord.cs</DependentUpon>
     </EmbeddedResource>

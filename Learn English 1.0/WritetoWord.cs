@@ -42,6 +42,7 @@ namespace Learn_English_1._0
                 end.Show();
                 this.Close();
             }
+            textBox1.Text = "";
 
         }
     }
